@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			body{
+				background: #D4D4D4;
+			}
+			#slide01{
+				height: 80vh;
+				width: 100vw;
+				background-image: url(./static/image/slide01_bg.png);
+				background-size: 100vw 100vh;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: space-between;
+				padding: 100px 0px;
+			}
+			
+			.slide01_card{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+			#slide02{
+				height: 120vh;
+				width: 100vw;
+				position: relative;
+				display: flex;
+			}
+			#card02_1{
+				height: 100vh;
+				width: 25%;
+				position: relative;
+			}
+			#image{
+				height: 220px;
+				width: 180px;
+				position: relative;
+				background: #E0E0E0;
+				top: 60px;
+				right: 20px;
+				float: right;
+				box-shadow: 0px 0px 20px -10px black;
+			}
+			#image img{
+				height: 150px;
+				width: 160px;
+				margin: 10px;
+				position: absolute;
+				bottom: 0;
+			}
+			#card02_1_span{
+				color: white;
+				position: absolute;
+				float: right;
+				font-size: 100px;
+				top: 5px;
+				right: 120px;
+				z-index: 10;
+			}
+			#card02_1_details{
+				width: 100%;
+				height: 33vh;
+				position: absolute;
+				bottom: 50px;
+			}
+			#details{
+				width: 260px;
+				height: 30vh;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: space-between;
+				position: absolute;
+				right: 0;
+			}
+			.details_card{
+				width: 260px;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-between;
+				padding: 10px;
+			}
+			.details_card img{
+				height: 22px;
+			}
+			.details_text{
+				width: 230px;
+				display:flex;
+				flex-direction: column;
+				align-items: left;
+				justify-content: center;
+				font-size: 15px;
+			}
+			
+			#card02_2{
+				height: 120vh;
+				width: 70%;
+			}
+			#summary{
+				top: 5vh;
+				padding: 2vw;
+				height: 12vw;
+				width: 66vw;
+				display: flex;
+				position: relative;
+				flex-direction: column;
+				align-items: center;
+				justify-content: space-between;
+			}
+			#resume{
+				height: 65vh;
+				width: 100%;
+				padding: 10px;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-between;
+			}
+			#col01{
+				height: 70vh;
+				width: 30vw;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: space-between;
+			}
+			#education{
+				width: 30vw;
+				height: 22vh;
+				justify-content: space-between;
+			}
+			#education ul{
+				width: 25vw;
+				margin:0;
+				padding:0;
+				display:inline-block;
+				text-align: left;
+			}
+			#education li{
+				width: 25vw;
+				margin: 10px 0px;
+				padding: 0px;
+			}
+			#experience{
+				width: 30vw;
+				height: 45vh;
+			}
+			#experience ul{
+				margin-left: 2.5vw;
+				padding: 0;
+				display: inline-block;
+				text-align: left;
+			}
+			#experience li{
+				width: 25vw;
+				margin: 5px 0px;
+				padding: 0;
+			}
+			
+			#col02{
+				height: 70vh;
+				width: 22vw;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			#a_skills{
+				width: 20vw;
+				height: 25vh;
+			}
+			#a_skills ul{
+				margin-left: 12px;
+				padding: 0;
+				display: inline-block;
+				text-align: left;
+			}
+			#a_skills li{
+				width: 20vw;
+				margin: 5px 0px;
+				padding: 0;
+			}
+			#acheive{
+				top: 20px;
+				width: 20vw;
+				height: 35vh;
+			}
+			#acheive ul{
+				margin-left: 12px;
+				padding: 0;
+				display: inline-block;
+				text-align: left;
+			}
+			#acheive li{
+				width: 20vw;
+				margin: 5px 0px;
+				padding: 0;
+			}
+			
+			#col03{
+				height: 70vh;
+				width: 15vw;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: space-between;
+			}
+			#skill{
+				width: 11vw;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content:space-between;
+			}
+			#skill img{
+				height: 35px;
+			}
+			
+			#slide03{
+				width: 100vw;
+				height: 130vh;
+				border: 2px solid black;
+				display:flex;
+				align-items: center;
+				justify-content: center;
+			}
+			#inbox03{
+				width: 95vw;
+				height: 115vh;
+				position: relative;
+				border: 1px solid white;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: space-evenly;
+			}
+			#inbox_top{
+				height: 45vh;
+				width: 95vw;
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+			}
+			.card_right{
+				width: 25vw;
+				height: 45vh;
+				position: relative;
+			}
+			.card_right img{
+				height: 230px;
+				position: absolute;
+				right: -10px;
+				bottom: 0px;
+			}
+			.card_right span{
+				font-size: 150px;
+				position: absolute;
+				left: 6vw;
+				top: 10vh;
+				font-weight: bold;
+				color: #E9E9E9;
+			}
+			#inbox_bottom{
+				height: 45vh;
+				width: 95vw;
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+			}
+			.card_left{
+				width: 25vw;
+				height: 45vh;
+				position: relative;
+			}
+			.card_left img{
+				height: 220px;
+				position: absolute;
+				right: -10px;
+				bottom: 10px;
+			}
+			.card_left span{
+				font-size: 150px;
+				position: absolute;
+				left: 7vw;
+				top: 10vh;
+				font-weight: bold;
+				color: #E9E9E9;
+			}
+			.card_left_first{
+				width: 25vw;
+				height: 45vh;
+				position: relative;
+				
+				display: flex;
+				flex-direction: column;
+				align-items: left;
+				justify-content: center;
+			}
+			.card_left_first span{
+				font-size: 80px;
+				color: white;
+			}
+			.card_left_first div{
+				margin-left: 20px;
+				border-top: 1.5px solid black;
+				width: 8vw;
+			}
+		</style>
+	
+	</head>
+	
+	<body>	
+		<marquee style="color:red; font-weight:bold; font-size:20px;">WORK IN PROGRESS!</marquee>
+			
+		<header id="slide01">
+			<div class="slide01_card" id="card01_1">
+				<span>PRODUCT DESIGN</span>
+			</div>
+			<div class="slide01_card" id="card01_2">
+				<span>____________________________ SACHIN PRATAP MALL ____________________________</span>
+				<span>2022</span>
+			</div>
+		</header>
+		
+		<div id="slide02">
+			<div class="slide02_card" id="card02_1">
+				<span id="card02_1_span">CV</span>
+				<div id="image">
+					<img src="./static/image/image.png" alt="Cinu">
+				</div>
+				<div id="card02_1_details">
+					<div id="details">
+						<span style="font-size:23px;color: white;font-weight: bolder;">SACHIN PRATAP MALL</span>
+						<div id="details_in">
+							<div class="details_card" id="email">
+								<img src="./static/image/email.png" alt="email">
+								<div class="details_text">
+									<span>sachin.mall@nift.ac.in</span>
+									<span>sachinpratapmall24@gmail.com</span>
+								</div>
+							</div>
+							
+							<div class="details_card" id="phone">
+								<img src="./static/image/phone.png" alt="email">
+								<div class="details_text">
+									<span>7523811998 / 6387784838</span>
+								</div>
+							</div>
+							
+							<div class="details_card" id="home">
+								<img src="./static/image/home.png" alt="email" style="height: 25px;">
+								<div class="details_text">
+									<span>Ward no-5, Main Road, Belthara Road, Ballia, UP</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="slide02_card" id="card02_2">
+				<div id="summary">
+					<p>
+						<span style="font-size:25px;color:white;font-weight:bold;">Hi,</span> I’m Sachin Pratap Mall, I would describe myself as highly curious and focused on learning in all parts of life, personal and professional.In my professional life, I look for the hardest problems to solve, where I can learn & develop the most.
+						No matter what I'm working on, I'm very invested. I Identify anyone i can learn from, as well as problems that i care about and try to optimize every step of the process. In my personal life, I spend a lot of time observing nature & capturing minute details.
+					</p>
+					
+					<p>
+						I’m a product design student, looking for a summer internship 8 weeks program in this field. I prepared a portfolio that you can have an idea about me.
+					</p>
+				</div>
+				
+				<div style="width:100%;height: 10vh;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+					<div style="width:60vw;height:1.5px;background-color:white;">
+					</div>
+				</div>
+				
+				<div id="resume">
+					<div id="col01">
+						<div id="education">
+							<span style="font-size:23px;font-weight:bold;color: white; margin-left:20px;">EDUCATION</span>
+							<div style="text-align:center;">
+								<ul>
+									<li>
+										National Institute Of Fashion Technology 
+										<br>(2019-2023)
+									</li>
+									<li>
+										Government Inter College, Allahbad
+										<br>(2013-2017)
+									</li>
+								<ul>
+							</div>
+						</div>
+						
+						<div id="experience">
+							<span style="font-size:23px;font-weight:bold;color: white; margin-left:20px;">EXPERIENCE</span>
+							<div style="text-align:center;">
+								<ul>
+									<li>
+										2 MONTHS INTERNSHIP AT MAXINFOTECH CO.-
+										as a graphics and ui designer.
+									</li>
+									<li>
+										FREELANCE FOR JB SWEETS -
+										<br>
+										created website layouts
+									</li>
+									<li>
+										FREELANCE FOR SKIN ORIGINALS -
+										<br>
+										created product packaging graphics
+									</li>
+									<li>
+										CRAFT CLUSTER VARANASI -
+										<br>
+										Metal Repousse, Gulabi Meenakari
+									</li>
+									<li>
+										INDUSTRY VISIT -
+										<br>
+										Stonemen's Craft Agra, Pooja Glass Works Pvt. Ltd.
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					<div id="col02">
+						<div id="a_skills">
+							<span style="font-size:23px;font-weight:bold;color: white;">ANALOGUE SKILLS</span>
+							<div style="text-align:center;">
+								<ul>
+									<li> Material Skills </li>
+									<li> Concept Building </li>
+									<li> Sketching</li>
+									<li> Visualization</li>
+								</ul>
+							</div>
+						</div>
+						<div id="acheive">
+							<span style="font-size:23px;font-weight:bold;color: white;">ACHEIVEMENTS</span>
+							<div style="text-align:center;">
+								<ul>
+									<li> 2nd Prize in product design competition at BRDS</li>
+									<li> 3rd Prize in poster competition at NIFT</li>
+									<li> 2nd Prize in ramp walk at spectrum 2019 NIFT</li>
+									<li> Gold Medal in photography (as model) at converge NIFT 2022</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					<div id="col03">
+						<span style="font-size:23px;font-weight:bold;color: white;">DIGITAL SKILLS</span>
+						<div id="skill">
+							<img src="./static/image/home.png" alt="home">
+							<div style="width: 7vw;">
+								<span>Photoshop</span>
+							</div>
+						</div>
+						<div id="skill">
+							<img src="./static/image/home.png" alt="home">
+							<div style="width: 7vw;">
+								<span>Illustrator</span>
+							</div>
+						</div>
+						<div id="skill">
+							<img src="./static/image/home.png" alt="home">
+							<div style="width: 7vw;">
+								<span>Rhinoceros</span>
+							</div>
+						</div>
+						<div id="skill">
+							<img src="./static/image/home.png" alt="home">
+							<div style="width: 7vw;">
+								<span>Keyshot</span>
+							</div>
+						</div>
+						<div id="skill">
+							<img src="./static/image/home.png" alt="home">
+							<div style="width: 7vw;">
+								<span>Figma</span>
+							</div>
+						</div>
+						<div id="skill">
+							<img src="./static/image/home.png" alt="home">
+							<div style="width: 7vw;">
+								<span>Sketchbook</span>
+							</div>
+						</div>
+						<div id="skill">
+							<img src="./static/image/home.png" alt="home">
+							<div style="width: 7vw;">
+								<span>Sketchup</span>
+							</div>
+						</div>
+						<div id="skill">
+							<img src="./static/image/home.png" alt="home">
+							<div style="width: 7vw;">
+								<span>AutoCAD</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="slide03">
+			<div id="inbox03">
+				<div id="inbox_top">
+					<div style="display:flex; flex-direction:column; align-items:center; justify-content: space-between;">
+						<div class="card_right">
+							<img src="./static/image/lamp.png" alt="Lamp">
+							<span>1</span>
+						</div>
+						<div style="width: 100%; position: relative;float:right;">
+							<span style="position: absolute;right:70px;">STUDY LAMP</span>
+						</div>
+					</div>
+					
+					<div style="display:flex; flex-direction:column; align-items:center; justify-content: space-between;">
+						<div class="card_right">
+							<img src="./static/image/boat.png" alt="Lamp">
+							<span>2</span>
+						</div>
+						<div style="width: 100%; position: relative;">
+							<span style="position: absolute;right:30px;">PACKAGING DESIGN</span>
+						</div>
+					</div>
+					
+					<div style="display:flex; flex-direction:column; align-items:center; justify-content: space-between;">
+						<div class="card_right">
+							<img src="./static/image/furniture.png" alt="Lamp">
+							<span>3</span>
+						</div>
+						<div style="width: 100%; position: relative;">
+							<span style="position: absolute;right: 40px;">WORKING TABLE</span>
+						</div>
+					</div>
+				</div>
+				
+				<div id="inbox_bottom">
+					<div class="card_left_first" style="margin-left:100px;">
+						<span>Content</span>
+						<div></div>
+					</div>
+					
+					<div style="display:flex; flex-direction:column; align-items:center; justify-content: space-between;">
+						<div class="card_left">
+							<img src="./static/image/boat.png" alt="Lamp">
+							<span>4</span>
+						</div>
+						<div style="width: 100%; position: relative;">
+							<span style="position: absolute;right: 40px;">BRAND BOOK</span>
+						</div>
+					</div>
+					
+					<div style="display:flex; flex-direction:column; align-items:center; justify-content: space-between;">
+						<div class="card_left">
+							<img src="./static/image/furniture.png" alt="Lamp">
+							<span>5</span>
+						</div>
+						<div style="width: 100%; position: relative;">
+							<span style="position: absolute;right: 40px;">MISCELLANEOUS</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
